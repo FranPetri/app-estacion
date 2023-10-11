@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="resources/css/panel.css">
+</head>
+<body>
+	<div class="container_estaciones">
+		<h1 class="title">Estaciones</h1>
+
+		<div id="estaciones" class="list_estaciones">
+			<template id="tpl_estacion">
+				<a class="card_estacion">
+					<div class="name_estacion"></div>
+					<div class="ubi_estacion"></div>
+					<div class="visitas_estacion"></div>
+				</a>
+			</template>		
+		</div>	
+	</div>
+</body>
+<script src="resources/js/apiEstaciones.js"></script>
+</html>
