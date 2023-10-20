@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: 'Kanit', sans-serif;
+}
+
+@font-face {
+    font-family: "CoolCon";
+    src: url("../../resources/txt/coolveticaCon.otf");
+}
+.back_green{
+	background-color: rgba(212, 217, 37, 0.25);
+	padding: 5px;
+	border-radius: 3px;
+}
+.back_red{
+	background-color: rgba(153, 0, 0, 0.25);
+	padding: 5px;
+	border-radius: 3px;
+}
+body{
+	background: rgb(51,47,39);
+	background: linear-gradient(0deg, rgba(51,47,39,1) 8%, rgba(34,193,195,1) 94%); 
+	overscroll-behavior: contain;
+}
+#wrapper{
+	width: 100vw;
+	height: 100vh;
+	/*border: solid 2px red;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;	
+}
+#container{
+	margin: 1em;
+}
+#panel{
+	height: 60vh;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: rgba( 0, 0, 0, 0.4);
+}
+#menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	position: absolute;
+}
+#menu > a {
+	display: block;
+	text-decoration: none;
+}
+.fas.fa-chevron-left {
+    color: white;
+    background-color: #FD8D14;
+    padding: 0.4em;
+    border-radius: 10px 0 10px 0;
+    box-shadow: 2px 2px 4px 0px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold; 
+}
+#panel-title{
+	padding: 5px;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: right;
+	text-align: right;
+	font-family: "CoolCon";
+}
+#title-ubicacion{
+	font-size: 10px;
+	text-align: right;
+}
+#title-sub{
+	height: 1em;
+	text-align: center;
+}
+
+#panel-container-temperatura,#panel-container-humedad,#panel-container-fuego,#panel-container-viento,#panel-container-presion{
+	display: flex;
+	font-family: "CoolCon";
+	color: white;
+}
+#panel-container-humedad,#panel-container-presion{
+	justify-content: center;
+	align-items: center;
+}
+
+.panel-col{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.col-items{
+	width: 100%;
+}
+.col-important {
+    display: flex;
+    justify-content: center;
+}
+
+.important-val-int {
+    font-size: 80px;
+    /* border: solid 1px blue; */
+}
+
+.panel-row{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.item-title {
+    font-size: 12px;
+    text-align: center;
+}
+
+.item-value {
+    text-align: center;
+}
+.panel-principal{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+#panel-canvas {
+    /* border: solid; */
+    height: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+#controls{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	transition: ease-in-out 2s;
+}
+#btn-temperatura,#btn-fuego,#btn-humedad,#btn-presion,#btn-viento{
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+	height: 80px;
+	padding: 15px;
+	width: 20%;
+	margin: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	font-family: "CoolCon";
+	font-weight: 600;
+	filter: drop-shadow(0 0 0.5rem black);
+}
+#btn-fuego{
+	background-color: rgba(240, 62, 24, 0.5	);
+}
+
+#btn-humedad{
+	background-color: rgba(188, 188, 188, 0.5);
+}
+
+#btn-presion{
+	background-color: rgba(148, 240, 81, 0.5);
+}
+
+#btn-viento{
+	background-color: rgba(69, 99, 167, 0.5	);
+}
+.control-date,.control-title{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 100%;
+}
+@media (min-width: 576px){
+
+	#wrapper{
+/*		flex-direction: row;*/
+	}
+
+	#container{
+		order: 1;
+		height: calc(100vh - 2em);
+		width: 50%;
+		margin: 1em 0 1em 1em;
+	}
+
+	#controls{
+		order: 2;
+		height: calc(100vh - 6em);
+		margin: 1em;
+	}
+
+	.align-center{
+		text-align: center;
+	}
+
+	.visible{
+		display: inline-block !important;
+	}
+
+
+}
+
+@media (min-width: 320px) {
+
+	#title-ubicacion {
+		font-size: 20px;
+	}
+
+	.important-val-int {
+		font-size: 60px;
+		/* border: solid 1px blue; */
+	}
+
+	.important-val-unit,  .important-val-dec {
+		font-size: 27px;
+		/* border: solid 1px blue; */
+	}
+
+	.btn-control-container {
+		display: grid;
+		grid-template-columns: auto;
+		color: white;
+	}
+	#btn-temperatura,#btn-fuego,#btn-humedad,#btn-presion,#btn-viento{
+		width: 30%;
+		margin: 5px;
+	}
+
+}
