@@ -1,25 +1,20 @@
 let chipid = "";
-// Vectores de...
-let fec = []; // fecha
-let tem = []; // temperatura
-let hum = []; // humedad
-let vie = []; // viento
-let fwi = []; // fuego
-let pre = []; // presion
-
-const MAX_DATOS = 7;
-const INTERVAL_REFRESH = 60000;
+				
+let fec = []; 
+let tem = []; 
+let hum = []; 
+let vie = []; 
+let fwi = []; 
+let pre = []; 
 
 let dataJsonActual = ""
 
-//botones 0: texto, 1: dibujo
-let btnControls = [["temperatura", '<i class="fas fa-thermometer-full color-temperatura"></i>'],
-				 ["fuego", '<i class="fas fa-fire color-fuego"></i>'],
-				 ["humedad", '<i class="fas fa-tint color-humedad"></i>'],
-				 ["viento",'<i class="fas fa-wind color-viento"></i>' ],
-				 ["presion",'<i class="fas fa-arrow-circle-down color-presion"></i>']]
+let btnControls = [["temperatura"],
+				 ["fuego"],
+				 ["humedad"],
+				 ["viento"],
+				 ["presion"]]
 
-// Pestaña visible
 let sectionVisible = ""
 
 // Objeto que contiene el gráfico
@@ -36,11 +31,11 @@ document.addEventListener("DOMContentLoaded", function(event){
 	addVisitStation();
 
 	// primer carga de 6 datos
-	refreshDatos(MAX_DATOS);
+	refreshDatos(7);
 
 	// si es un chip mio recarga cada 10 seg y con 1 solo dato nuevo
-	refreshId = setInterval(refreshDatos, INTERVAL_REFRESH, 1);
-	console.log("Refresco cada "+INTERVAL_REFRESH+" seg.");
+	refreshId = setInterval(refreshDatos, 60000, 1);
+	console.log("Refresco cada "+60000+" seg.");
 
 	// inicializa la ventana mostrando la pestaña por defecto
 	btnControls.forEach(function(btn, i){			
