@@ -15,7 +15,7 @@ function cardEstacion(info) {
 	const tpl = tpl_estacion.content
 	const clon = tpl.cloneNode(true);
 
-	clon.querySelector('.card_estacion').setAttribute('href','detalle.php?chipid='+info.chipid)
+	clon.querySelector('.card_estacion').setAttribute('href','detalle/'+info.chipid)
 
 	clon.querySelector('.name_estacion').innerHTML = info.apodo
 	clon.querySelector('.ubi_estacion').innerHTML = info.ubicacion

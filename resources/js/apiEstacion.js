@@ -9,15 +9,10 @@ let pre = [];
 
 let dataJsonActual = ""
 
-let btnControls = [["temperatura"],
-				 ["fuego"],
-				 ["humedad"],
-				 ["viento"],
-				 ["presion"]]
+let btnControls = [["temperatura"],["fuego"],["humedad"],["viento"],["presion"]]
 
 let sectionVisible = ""
 
-// Objeto que contiene el gráfico
 let myChart = null
 
 // Evento que se ejecuta cuando se carga la pagina totalmente
@@ -107,7 +102,6 @@ async function refreshDatos(cantfilas){
 // Analiza el json, carga los valores y el gráfico
 // =================================
 function procesar(datos, addData = true){
-
 	let hora = ""
 
 	console.log("Filas Json: " + datos.length);
