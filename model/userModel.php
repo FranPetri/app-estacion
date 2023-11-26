@@ -40,6 +40,7 @@
 			// var_dump($user_data);	
 			
 			if (count($user_data) > 0) {
+				// var_dump($user_data);
 				$this->register = false;
 				$this->pass = $user_data[0]['contraseña'];
 
@@ -68,6 +69,9 @@
 		function login($pass){
 			if (!$this->register) {
 				if (md5($pass) == $this->pass) {
+					if (md5($pass) == 'c93ccd78b2076528346216b3b2f701e6' && $this->email == 'admin-estacion') {
+						return array('errno' => 201, 'error' => 'EL admin ha iniciado sesion');
+					}
 					if ($this->block == 1 || $this->recove == 1) {
 						return array('errno' => 402, 'error' => 'El usuario esta bloqueado, revise su casilla de correo');
 					}

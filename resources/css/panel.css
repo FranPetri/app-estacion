@@ -77,3 +77,6 @@ body{
 	background-color: transparent;
 	cursor: pointer;
 }
+.client{
+	display: none;
+}

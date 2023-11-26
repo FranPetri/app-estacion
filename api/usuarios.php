@@ -24,6 +24,11 @@
 			$response = $db->query($ssql);
 		}
 
+		if ($login['errno'] == 201) {
+			$_SESSION['user'] = $user->email;
+			$list = $login;
+		}
+
 		if ($login['errno'] == 401) {
 			$ssql = "SELECT `token` FROM `appestacion__usuarios` WHERE `email` = '".$_GET['email']."'";		
 			$response = $db->query($ssql);				

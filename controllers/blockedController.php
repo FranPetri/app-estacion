@@ -1,4 +1,6 @@
 <?php 
+	session_unset();
+	session_destroy();
 
 	$tpl = new EngineTpl('views/templates/blocked.html');
 		

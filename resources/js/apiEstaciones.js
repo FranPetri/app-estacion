@@ -11,7 +11,7 @@ getEstaciones().then(estaciones => {
 })
 
 function cardEstacion(info) {
-	console.log(info)
+	// console.log(info)
 	const tpl = tpl_estacion.content
 	const clon = tpl.cloneNode(true);
 
