@@ -1,6 +1,10 @@
 <?php 
+	session_start();
+	
 	require 'env.php';
 	include 'lib/enginetpl.php';
+	include 'model/db/credentials.php';
+	// require 'model/dbModel.php';
 	
 	$_ROUTE = explode("/", $_GET["seccion"]);
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>App-Estacion | Reset</title>
+	<link rel="stylesheet" href="../resources/css/landing.css">
+</head>
+<body>	
+	<div class="wrapper_login" id="reseting">
+		<div class="container_form">
+			<h2>Cambiar Contraseña</h2>
+			<form method="POST">
+				<label>Contraseña</label>
+				<input type="text" name="pass_user" id="pass_user" placeholder="Email">
+				<label>Repetir Contraseña</label>
+				<input type="text" name="check_pass _user" id="check_pass_user" placeholder="Email">
+				<input type="submit" name="btnReset" id="btn-reset" value="Aceptar">
+			</form>
+		</div>	
+		<div class="alert_maxed hidden">{{alert_max}}</div>
+		<div class="token hidden">{{token}}</div>
+	</div>
+</body>
+<script src="../lib/mailer/funciones.js"></script>
+</html>

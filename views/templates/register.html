@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>App-Estacion | Register</title>
+	<link rel="stylesheet" href="resources/css/landing.css">
+</head>
+<body>
+	<div class="wrapper_login">
+		<div class="container_form">
+			<h2>Registrate</h2>
+
+			<form method="POST">
+				<label>Email</label>
+				<input type="text" name="email" id="email_user" class="" placeholder="" required>
+				
+				<label>Contraseña</label>
+				<input type="password" name="pass" id="pass_user" class="" required>
+				
+				<label>Confirmar Contraseña</label>
+				<input type="password" name="check_pass" id="check_pass_user" class="" required>
+				
+				<input type="submit" id="btn-register" name="btnRegister"  value="Aceptar">
+				
+				<div class="alert"></div>
+			</form>
+
+		</div>	
+	</div>	
+</body>
+<script src="lib/mailer/funciones.js"></script>
+</html>

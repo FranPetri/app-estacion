@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>App-Estacion | Panel</title>
 	<link rel="stylesheet" href="resources/css/panel.css">
 </head>
 <body>
@@ -12,11 +12,15 @@
 
 		<div id="estaciones" class="list_estaciones">
 			<template id="tpl_estacion">
-				<a class="card_estacion">
-					<div class="name_estacion"></div>
-					<div class="ubi_estacion"></div>
-					<div class="visitas_estacion"></div>
-				</a>
+				<form class="card_estacion" method="POST">
+					<input type="hidden" name="station" class="id_station">
+					<input type="submit" class="btn-station" name="btnStation" value="">
+					<div>
+						<div class="name_estacion"></div>
+						<div class="ubi_estacion"></div>
+						<div class="visitas_estacion"></div>
+					</div>
+				</form>
 			</template>		
 		</div>	
 	</div>

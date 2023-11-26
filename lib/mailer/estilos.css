@@ -1,0 +1,47 @@
+*{
+  margin: 0rem;
+  padding: 0rem;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.frm-container {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+  border-radius: 8px;
+  /* padding: 1rem; */
+  overflow: hidden;
+}
+
+.frm-title {
+  background-color: cornflowerblue;
+  font-weight: bold;
+  padding: 0.3rem 0.2rem 0.2rem 1rem;
+}
+
+.frm-data {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 0rem;
+}
+
+.frm-data input{
+  margin-bottom: 1rem;
+}
+
+.frm-data textarea{
+  margin-bottom: 1rem;
+}
+
+.frm-controls {
+  display: flex;
+  justify-content: end;
+  padding: 0rem 1rem 1rem;
+}

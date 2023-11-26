@@ -46,6 +46,8 @@ body{
 	font-family: 'CoolCon';
 	text-decoration: none;
 	transition: ease-in-out 0.25s;
+	display: flex;
+
 }
 .card_estacion:hover{
 	background-color: rgba(0, 0, 0, 1);
@@ -64,4 +66,14 @@ body{
 }
 .viistas{
 	color: lightblue;
+}
+.btn-station{
+	position: absolute;
+	margin-top: -15px;
+	left: 37.5%;
+	width: 25%;
+	height: 18%;	
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
 }

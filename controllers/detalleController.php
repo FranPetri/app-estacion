@@ -1,5 +1,8 @@
 <?php 
-
+	
+	if (empty($_SESSION['user'])) {
+		header('Location: '.URL_APP.'/login');
+	}
 	$tpl = new EngineTpl('views/templates/detalle.html');
 
 	$get_url = explode('/',$_GET['seccion']);
