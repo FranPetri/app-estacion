@@ -26,8 +26,11 @@
 
         if ($response_clients->num_rows == 0) {
             $rand_id = rand(10,1000);
-            $ssql_client = "INSERT INTO `appestacion__tracker_ip`(`ip`, `idTracker`, `latitud`, `longitud`, `pais`) VALUES ('$ip','$rand_id','$latitud','$longitud','$pais')";
+            $token = md5(uniqid().$ip);
+            $ssql_client = "INSERT INTO `appestacion__tracker_ip`(`token`,`ip`, `idTracker`, `latitud`, `longitud`, `pais`) VALUES ('$token','$ip','$rand_id','$latitud','$longitud','$pais')";
             $response_clients = $db->query($ssql_client);
+            echo json_encode(array('errno' => 200, 'error' => 'Cliente Ingresado'));
+            return true;
         }else{
             $ssql_client = "SELECT `accesos` FROM `appestacion__tracker_ip` WHERE `ip` = '$ip'";
             
@@ -48,7 +51,6 @@
             $so = explode('(', $_SERVER['HTTP_USER_AGENT']);
             
             $so = explode(';', $so[1]);
-            var_dump($so);
             
             if ($so[1] == ' Ubuntu') {
                 $so = 'Ubuntu';
@@ -69,8 +71,11 @@
 
             $ssql_client = "UPDATE `appestacion__tracker_ip` SET `accesos`='$accesos' WHERE `ip` = '$ip'";
             $response_clients = $db->query($ssql_client);
+            echo json_encode(array('errno' => 201, 'error' => 'Registro exitoso'));
+            return true;
         }        
-    }
+        echo json_encode(array('errno' => 404, 'error' => 'Fatal error'));
+    }  
 
     if ($_GET['modo'] == 'chargeMap') {
         
@@ -79,7 +84,7 @@
         $response = $db->query($ssql_map);
         $response = $response->fetch_all(MYSQLI_ASSOC);
 
-        echo json_encode($response);
+        // echo json_encode($response);
     }
 
  ?>
